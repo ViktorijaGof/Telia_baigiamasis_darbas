@@ -1,12 +1,11 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System;
 
 namespace SeleniumFramework
 {
     public class Driver
     {
-        public static IWebDriver driver;
+        private static IWebDriver driver;
        
         public static void InitializeDriver()
         {
@@ -14,13 +13,11 @@ namespace SeleniumFramework
             driver.Manage().Window.Maximize();
         }
 
-        public static IWebDriver GetDriver();
+        internal static IWebDriver GetDriver()
         {
-            return public static void ShutdownDriver()
-        {
-            throw new NotImplementedException();
+            return driver;
         }
-
+            
         internal static void OpenPage(string url)
         {
             driver.Url = url;
@@ -29,7 +26,5 @@ namespace SeleniumFramework
         {
             driver.Quit();  
         }
-        
     }
-
 }
